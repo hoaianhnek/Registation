@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Registation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="content">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-4">
+                    <div class="content-backgrounduser">
+                        <div class="background-imguser">
+                            <img src="images/user.png" width="100px" height="100px">
+                        </div>
+                        <div class="content-backgrouduser">
+                            <h2>Registation</h2>
+                        </div>
+                        <div class="icon-backgrounduser">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="mobile-reponsive">
+                        <h2>Registation</h2>
+                    </div>
+                    <form class="ml-4 mt-4" id= "Registation" action="DetailInformation.html" >
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="name">Name</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="text" id="name"class="form-group" placeholder="Enter name" required/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="email">Email</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="email" id="email" class="form-group" placeholder="Enter email" required/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="password">Password</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="password" id = "password"class="form-group" placeholder="Enter password" minlength="4" maxlength="20" required/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="confirm">Confirm Password</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="password" id = "confirm"class="form-group" placeholder="Enter confirm password"minlength="4" maxlength="20" required/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="phone">Phone</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="text" id = "phone"class="form-group" placeholder="0900001111" required minlength='10' maxlength="10"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="sex">Sex</label></div>
+                            <div class="col-lg-9 col-sm-9">
+                                <label class="radio-inline"><input class="form-group"type="radio" name="optradio" value="male"required>Male</label>
+                                <label class="radio-inline"><input type="radio" class="form-group"name="optradio" value="female"required>Female</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="age">Age</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="number" id ="age"class="form-group" placeholder="Enter age" min='1'max='120'required/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="address">Address</label></div>
+                            <div class="col-lg-9 col-sm-9">
+                                <div class="d-flex form-group address">
+                                    <select class="mr-4" required id="address" name="cityList">
+                                        <option value="">--Choose City--</option>
+                                    </select>
+                                    <select required name="districtList">
+                                        <option value="">--Choose District--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3"><label for="relatives">Relatives</label></div>
+                            <div class="col-lg-9 col-sm-9"><input type="text" id = "relatives"class="form-group" placeholder="Enter relatives" required/></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="form-group btn-success" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="js/Registation.js"></script>
+</html>
