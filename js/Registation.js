@@ -132,7 +132,6 @@ function Edit(x) {
     } else {
         if($("#email"+x).val()!="") {
             infor.email[x-1] = $("#email"+x).val();
-            alert(infor.email[x-1])
             $(".saveemail"+x).attr('onclick',"return false;");
             $("#email"+x).prop('disabled','disabled');
             stt = 0;
