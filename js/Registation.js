@@ -70,6 +70,13 @@ $(document).ready(function() {
             $("#Registation").attr('action','DetailInformation.html');
         }
     });
+    $('#name').keyup(function() {
+        var patternName = /^[a-zA-z]$/;
+        if(!patternName.test($(this).val())) {
+            console.log('huhu');
+        }
+        
+    });
     // xử lý nút cộng
     $(".plus").click(function() {
         var html = "";
@@ -106,22 +113,22 @@ function Delete(x) {
         for(var i=0;i<infor.email.length;i++) {
             if(infor.email[i] == $("#email"+x).val()) {
                 infor.email.splice(i,1);
-                $("#email"+x).prop('disabled',false);
-                $("#email"+x).val('');
-                $(".saveemail"+x).attr('onclick',"Save("+x+")");
-                $(".saveemail"+x).attr('style','cursor:pointer !important');
             }
         }
+        $("#email"+x).prop('disabled',false);
+        $("#email"+x).val('');
+        $(".saveemail"+x).attr('onclick',"Save("+x+")");
+        $(".saveemail"+x).attr('style','cursor:pointer !important');
     } else {
         for(var i=0;i<infor.email.length;i++) {
             if(infor.email[i] == $("#email"+x).val()) {
                 infor.email.splice(i,1);
-                $("#email"+x).remove();
-                $(".email"+x).remove();
-                $(".saveemail"+x).remove();
-                dem -= 1;
             }
         }
+        $("#email"+x).remove();
+        $(".email"+x).remove();
+        $(".saveemail"+x).remove();
+        dem -= 1;
     }
 }
 function Edit(x) {
