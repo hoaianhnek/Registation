@@ -1,3 +1,7 @@
+var infor = {};
+infor.email = [];
+var dem=1;
+var stt =0;
 $(document).ready(function() {
     var CITYLIST = [
         {"Code": "01","City": "Hà Nội","Lookup": "Hà Nội, ha noi, hanoi"},
@@ -50,13 +54,11 @@ $(document).ready(function() {
     });
     $("input[type=submit]").click(function() {
         if($("#password").val() != $('#confirm').val()) {
-            alert('Password and Confirm Password dissimilarity');
             $("#Registation").attr('action','Registation.html');
+            $('#confirm').append("<span class='text-danger'>Password and Confirm Password dissimilarity</span>")
             $("#name").val('huh');
         } else {
-            var infor = {};
             infor.name = $("#name").val();
-            infor.email = $("#email").val();
             infor.password = $("#password").val();
             infor.phone = $("#phone").val();
             infor.sex = $("input[name='optradio']:checked").val();
@@ -68,4 +70,72 @@ $(document).ready(function() {
             $("#Registation").attr('action','DetailInformation.html');
         }
     });
+    // xử lý nút cộng
+    $(".plus").click(function() {
+        var html = "";
+        if(dem<3) {
+            html += '<div class="col-lg-3 col-sm-3"></div><div class="col-lg-6 col-sm-6">';
+            html += '<input type="email" id="email'+(dem+1)+'" pattern="[a-z0-9._%+-]+[[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}" class="form-group" placeholder="Enter email" required/></div>';
+            html += '<div class="col-lg-3 col-sm-3" style="cursor:pointer"><a onclick="Save('+(dem+1)+')" class="saveemail'+(dem+1)+' mr-1"><i class="fas fa-save"></i></a>';
+            html += '<a onclick="Delete('+(dem+1)+')" class="email'+(dem+1)+' mr-1"><i class="fas fa-trash-alt"></i></a>';
+            html += '<a onclick = "Edit('+(dem+1)+')" class="email'+(dem+1)+' mr-1"><i class="fas fa-edit"></i></a></div>';
+            $("#Registation> .email").append(html);
+            dem ++;
+            stt = 0;
+        }
+    });
 });
+function Save(x) {
+    var email = $("#email"+x).val();
+    
+    if(email != "") {
+        if(infor.email.indexOf(email) == -1) {
+            infor.email.push(email);
+            $("#email"+x).attr('disabled','disabled');
+            $(".saveemail"+x).attr('onclick',"return false;");
+            $(".saveemail"+x).attr('style','cursor:context-menu !important');
+        } else {
+            alert("Email đã tồn tại");
+        }
+    } else {
+        alert("Chưa nhập dữ liệu");
+    }
+}
+function Delete(x) {
+    if(x==1) {
+        for(var i=0;i<infor.email.length;i++) {
+            if(infor.email[i] == $("#email"+x).val()) {
+                infor.email.splice(i,1);
+            }
+        }
+        $("#email"+x).prop('disabled',false);
+        $("#email"+x).val('');
+        $(".saveemail"+x).attr('onclick',"Save("+x+")");
+        $(".saveemail"+x).attr('style','cursor:pointer !important');
+    } else {
+        for(var i=0;i<infor.email.length;i++) {
+            if(infor.email[i] == $("#email"+x).val()) {
+                infor.email = infor.email.splice(i,1);
+            }
+        }
+        $("#email"+x).remove();
+        $(".email"+x).remove();
+        $(".saveemail"+x).remove();
+        dem -= 1;
+    }
+}
+function Edit(x) {
+    if(stt == 0) {
+        $("#email"+x).prop('disabled',false);
+        $(".saveemail"+x).attr('onclick',"return false;");
+        stt++;
+    } else {
+        if($("#email"+x).val()!="") {
+            infor.email[x-1] = $("#email"+x).val();
+            $(".saveemail"+x).attr('onclick',"return false;");
+            $("#email"+x).prop('disabled','disabled');
+            stt = 0;
+        }
+        
+    }
+}
