@@ -38,16 +38,16 @@ $(document).ready(function() {
     ];
     var x = JSON.parse(sessionStorage.getItem('information'));
     console.log(x);
-    $('.name').append('<div class="col-5 text-left">'+x.name+'</div>');
-    $('.email').append('<div class="col-5 text-left">'+x.email+'</div>');
-    $('.password').append('<div class="col-5 text-left">'+x.password+'</div>');
-    $('.phone').append('<div class="col-5 text-left">'+x.phone+'</div>');
-    $('.sex').append('<div class="col-5 text-left">'+x.sex+'</div>');
-    $('.age').append('<div class="col-5 text-left">'+x.age+'</div>');
+    $('.name').append('<div class="col-10">'+x.name+'</div>');
+    $('.email').append('<div class="col-10">'+x.email+'</div>');
+    $('.password').append('<div class="col-10">'+x.password+'</div>');
+    $('.phone').append('<div class="col-10">'+x.phone+'</div>');
+    $('.sex').append('<div class="col-10">'+x.sex+'</div>');
+    $('.age').append('<div class="col-10">'+x.age+'</div>');
     for(var i=0;i<CITYLIST.length;i++) {
         for(var j=0;j<DISTRICTLIST.length;j++) {
             if(CITYLIST[i].Code == x.city && DISTRICTLIST[j].Code == x.district) {
-                $('.address').append('<div class="col-5 text-left">'+DISTRICTLIST[j].District+', '+CITYLIST[i].City+'</div>');
+                $('.address').append('<div class="col-10 text-left">'+DISTRICTLIST[j].District+', '+CITYLIST[i].City+'</div>');
             } 
         }
     }

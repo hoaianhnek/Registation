@@ -31,14 +31,14 @@
                     <div class="mobile-reponsive">
                         <h2>Registation</h2>
                     </div>
-                    <form class="ml-4 mt-4" id= "Registation" action="DetailInformation.html" >
+                    <form class="ml-4 mt-4" id= "Registation" >
                         <div class="row">
                             <div class="col-lg-3 col-sm-3"><label for="name">Name</label></div>
                             <div class="col-lg-9 col-sm-9"><input type="text" id="name"class="form-group" placeholder="Enter name" required/></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-3"><label for="email">Email</label></div>
-                            <div class="col-lg-9 col-sm-9"><input type="email" id="email" class="form-group" placeholder="Enter email" required/></div>
+                            <div class="col-lg-9 col-sm-9"><input type="email" id="email" pattern='[a-z0-9._%+-]+[[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}' class="form-group" placeholder="Enter email" required/></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-3"><label for="password">Password</label></div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-3"><label for="phone">Phone</label></div>
-                            <div class="col-lg-9 col-sm-9"><input type="text" id = "phone"class="form-group" placeholder="0900001111" required minlength='10' maxlength="10"/></div>
+                            <div class="col-lg-9 col-sm-9"><input type="text" id = "phone"class="form-group" pattern="(09|08|05|07|03)+([0-9]{8})" placeholder="0900001111" required minlength='10' maxlength="10"/></div>
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-3"><label for="sex">Sex</label></div>

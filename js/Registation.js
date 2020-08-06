@@ -48,30 +48,24 @@ $(document).ready(function() {
             }
         }
     });
-    $('#Registation').submit(function() {  
-        var infor = {};
-        infor.name = $("#name").val();
-        infor.email = $("#email").val();
-        infor.password = $("#password").val();
-        infor.phone = $("#phone").val();
-        infor.sex = $("input[name='optradio']:checked").val();
-        infor.age = $("#age").val();
-        infor.city = $("select[name='cityList']").val();
-        infor.district = $('select[name="districtList"]').val();
-        infor.relatives = $('#relatives').val();
-        sessionStorage.setItem('information',JSON.stringify(infor));
-    });
-    // xác thực
-    $("#confirm").change(function() {
-        if($("#password").val() != $(this).val()) {
+    $("input[type=submit]").click(function() {
+        if($("#password").val() != $('#confirm').val()) {
             alert('Password and Confirm Password dissimilarity');
-        }
-    });
-    $('#phone').change(function() {
-        var rules = /((09|08|03|07|05)+([0-9]{8})\b)/g;
-        var phone = $(this).val();
-        if(rules.test(phone) == false) {
-            alert("Số điện thoại sai định dạng!");
+            $("#Registation").attr('action','Registation.html');
+            $("#name").val('huh');
+        } else {
+            var infor = {};
+            infor.name = $("#name").val();
+            infor.email = $("#email").val();
+            infor.password = $("#password").val();
+            infor.phone = $("#phone").val();
+            infor.sex = $("input[name='optradio']:checked").val();
+            infor.age = $("#age").val();
+            infor.city = $("select[name='cityList']").val();
+            infor.district = $('select[name="districtList"]').val();
+            infor.relatives = $('#relatives').val();
+            sessionStorage.setItem('information',JSON.stringify(infor));
+            $("#Registation").attr('action','DetailInformation.html');
         }
     });
 });

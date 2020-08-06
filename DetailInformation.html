@@ -7,48 +7,59 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <style>
         body {
-            margin: 2em;
+            margin: 4em;
+            background-color: #808080;
         }
-        body> div.text-center {
-            width: 50%;
-            background-color: rgba(0, 128, 0, 0.096);
+        body> div {
+            width: 40%;
+            background-color: white;
             margin: 0 auto;
             box-shadow: 1px 2px 6px 1px #887a7a4d;
             font-family: 'Times New Roman', Times, serif;
         }
         h2 {
-            background-color: green;
+            background-color: #5FB4ED;
             color: white;
-            padding: 15px;
+            padding: 5px 5px 5px 15px;
+            font-size: 25px;
+        }
+        .information_myself,.information_account {
+            margin: 10px 20px;
         }
     </style>
 </head>
 <body>
-    <div class="text-center">
+    <div>
         <h2>Detail Information</h2>
-        <div class="name row">
-            <div class="col-5 text-right"><span>Name</span></div>
+        <div class="information_myself">
+            <h5 class="font-weight-bold">Information Myself</h5>
+            <div class="name row">
+                <div class="col-2"><span>Name</span></div>
+            </div>
+            <div class="phone row">
+                <div class="col-2"><span>Phone</span></div>
+            </div>
+            <div class="sex row">
+                <div class="col-2"><span>Sex</span></div>
+            </div>
+            <div class="age row">
+                <div class="col-2"><span>Age</span></div>
+            </div>
+            <div class="address row">
+                <div class="col-2"><span>Address</span></div>
+            </div>
+            <div class="relatives row">
+                <div class="col-2"><span>Relatives</span></div>
+            </div>
         </div>
-        <div class="email row">
-            <div class="col-5 text-right"><span>Email</span></div>
-        </div>
-        <div class="password row">
-            <div class="col-5 text-right"><span>Password</span></div>
-        </div>
-        <div class="phone row">
-            <div class="col-5 text-right"><span>Phone</span></div>
-        </div>
-        <div class="sex row">
-            <div class="col-5 text-right"><span>Sex</span></div>
-        </div>
-        <div class="age row">
-            <div class="col-5 text-right"><span>Age</span></div>
-        </div>
-        <div class="address row">
-            <div class="col-5 text-right"><span>Address</span></div>
-        </div>
-        <div class="relatives row">
-            <div class="col-5 text-right"><span>Relatives</span></div>
+        <div class="information_account pb-3">
+            <h5 class="font-weight-bold">Information Account</h5>
+            <div class="email row">
+                <div class="col-2"><span>Email</span></div>
+            </div>
+            <div class="password row">
+                <div class="col-2"><span>Password</span></div>
+            </div>
         </div>
     </div>
 </body>
