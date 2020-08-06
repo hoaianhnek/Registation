@@ -106,22 +106,22 @@ function Delete(x) {
         for(var i=0;i<infor.email.length;i++) {
             if(infor.email[i] == $("#email"+x).val()) {
                 infor.email.splice(i,1);
+                $("#email"+x).prop('disabled',false);
+                $("#email"+x).val('');
+                $(".saveemail"+x).attr('onclick',"Save("+x+")");
+                $(".saveemail"+x).attr('style','cursor:pointer !important');
             }
         }
-        $("#email"+x).prop('disabled',false);
-        $("#email"+x).val('');
-        $(".saveemail"+x).attr('onclick',"Save("+x+")");
-        $(".saveemail"+x).attr('style','cursor:pointer !important');
     } else {
         for(var i=0;i<infor.email.length;i++) {
             if(infor.email[i] == $("#email"+x).val()) {
-                infor.email = infor.email.splice(i,1);
+                infor.email.splice(i,1);
+                $("#email"+x).remove();
+                $(".email"+x).remove();
+                $(".saveemail"+x).remove();
+                dem -= 1;
             }
         }
-        $("#email"+x).remove();
-        $(".email"+x).remove();
-        $(".saveemail"+x).remove();
-        dem -= 1;
     }
 }
 function Edit(x) {
@@ -132,6 +132,7 @@ function Edit(x) {
     } else {
         if($("#email"+x).val()!="") {
             infor.email[x-1] = $("#email"+x).val();
+            alert(infor.email[x-1])
             $(".saveemail"+x).attr('onclick',"return false;");
             $("#email"+x).prop('disabled','disabled');
             stt = 0;
