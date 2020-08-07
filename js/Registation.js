@@ -106,7 +106,7 @@ $(document).ready(function() {
                 html += '<option value='+CITYLIST[i].Code+'>'+CITYLIST[i].City+'</option>';
             }
             html+='</select><select class="mt-2" name="districtList'+(demAdd+1)+'"><option value="">--Choose District--</option>';
-            html+='</select></div></div><div class="col-lg-3 col-sm-3 mt-1" style="cursor:pointer">';
+            html+='</select></div></div><div class="col-lg-3 col-sm-3 mt-2" style="cursor:pointer">';
             html+='<a onclick ="SaveAddress('+(demAdd+1)+')" class="mr-1 address'+(demAdd+1)+'"><i class="fas fa-save"></i></a>';
             html += '<a onclick="DeleteAddress('+(demAdd+1)+')" class="Deladdress'+(demAdd+1)+' mr-1"><i class="fas fa-trash-alt"></i></a>';
             html += '<a onclick="EditAddress('+(demAdd+1)+')" class="EditAddress'+(demAdd+1)+'"><i class="fas fa-edit"></i></a></div>';
