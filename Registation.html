@@ -32,13 +32,13 @@
                         <h2>Registation</h2>
                     </div>
                     <form class="ml-4 mt-4" id= "Registation" >
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="name">Name</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="text" id="name"class="form-group" placeholder="Enter name" required/></div>
+                            <div class="col-lg-6 col-sm-6 name"><input type="text" id="name" placeholder="Enter name" required/></div>
                         </div>
-                        <div class="row email">
+                        <div class="row email form-group">
                             <div class="col-lg-3 col-sm-3"><label for="email1">Email</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="email" id="email1" pattern='[a-z0-9._%+-]+[[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}' class="form-group" placeholder="Enter email" required/></div>
+                            <div class="col-lg-6 col-sm-6"><input type="email" id="email1" pattern='[a-z0-9._%+-]+[[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}' placeholder="Enter email" required/></div>
                             <div class="col-lg-3 col-sm-3" style="cursor:pointer">
                                 <a class="plus mr-1"><i class="fas fa-plus-square"></i></a>
                                 <a onclick ='Save("1")' class="saveemail1 mr-1"><i class="fas fa-save"></i></a>
@@ -46,45 +46,51 @@
                                 <a onclick="Edit('1')" class="email1"><i class="fas fa-edit"></i></a>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="password">Password</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="password" id = "password"class="form-group" placeholder="Enter password" minlength="4" maxlength="20" required/></div>
+                            <div class="col-lg-6 col-sm-6"><input type="password" id = "password"placeholder="Enter password" minlength="4" maxlength="20" required/></div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="confirm">Confirm Password</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="password" id = "confirm"class="form-group" placeholder="Enter confirm password"minlength="4" maxlength="20" required/></div>
+                            <div class="col-lg-6 col-sm-6 password"><input type="password" id = "confirm" placeholder="Enter confirm password"minlength="4" maxlength="20" required/></div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="phone">Phone</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="text" id = "phone"class="form-group" pattern="(09|08|05|07|03)+([0-9]{8})" placeholder="0900001111" required minlength='10' maxlength="10"/></div>
+                            <div class="col-lg-6 col-sm-6"><input type="text" id = "phone" pattern="(09|08|05|07|03)+([0-9]{8})" placeholder="0900001111" required minlength='10' maxlength="10"/></div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="sex">Sex</label></div>
                             <div class="col-lg-6 col-sm-6">
-                                <label class="radio-inline"><input class="form-group"type="radio" name="optradio" value="male"required>Male</label>
-                                <label class="radio-inline"><input type="radio" class="form-group"name="optradio" value="female"required>Female</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" value="male"required>Male</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" value="female"required>Female</label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="age">Age</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="number" id ="age"class="form-group" placeholder="Enter age" min='1'max='120'required/></div>
+                            <div class="col-lg-6 col-sm-6"><input type="number" id ="age" placeholder="Enter age" min='1'max='120'required/></div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group address__list">
                             <div class="col-lg-3 col-sm-3"><label for="address">Address</label></div>
                             <div class="col-lg-6 col-sm-6">
-                                <div class="d-flex form-group address">
-                                    <select class="mr-4" required id="address" name="cityList">
+                                <div class="d-flex address">
+                                    <select class="mr-4" required id="address" name="cityList1">
                                         <option value="">--Choose City--</option>
                                     </select>
-                                    <select required name="districtList">
+                                    <select required name="districtList1">
                                         <option value="">--Choose District--</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-lg-3 col-sm-3 mt-1" style="cursor:pointer">
+                                <a class="plusAdress mr-1 ml-1"><i class="fas fa-plus-square"></i></a>
+                                <a onclick ='SaveAddress("1")' class="address1 mr-1"><i class="fas fa-save"></i></a>
+                                <a onclick="DeleteAddress('1')" class="Deladdress1 mr-1"><i class="fas fa-trash-alt"></i></a>
+                                <a onclick="EditAddress('1')" class="EditAddress1"><i class="fas fa-edit"></i></a>
+                            </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-lg-3 col-sm-3"><label for="relatives">Relatives</label></div>
-                            <div class="col-lg-6 col-sm-6"><input type="text" id = "relatives"class="form-group" placeholder="Enter relatives" required/></div>
+                            <div class="col-lg-6 col-sm-6"><input type="text" id = "relatives" placeholder="Enter relatives" required/></div>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="form-group btn-success" value="Submit"/>

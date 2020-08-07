@@ -205,6 +205,15 @@ label {
     line-height: 38px;
     transition: all 0.3s;
 }
-.email i:hover {
+.email a:hover> i {
     color: #406ff1;
+}
+a[disabled = "disabled"] {
+    color: rgba(0, 0, 0, 0.459) !important;
+}
+a[disabled = "disabled"]:hover i{
+    color: rgba(0, 0, 0, 0.459) !important;
+}
+span.text-danger {
+    font-size: 12px;
 }

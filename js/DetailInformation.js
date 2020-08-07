@@ -37,18 +37,20 @@ $(document).ready(function() {
         {"Code":"019", "District":"Quận Nam Từ Liêm", "CityCode": "01","Lookup":"Quận Nam Từ Liêm,Nam Từ Liêm,Từ Liêm"}
     ];
     var x = JSON.parse(sessionStorage.getItem('information'));
-    console.log(x);
     $('.name').append('<div class="col-10">'+x.name+'</div>');
     $('.email').append('<div class="col-10">'+x.email+'</div>');
     $('.password').append('<div class="col-10">'+x.password+'</div>');
     $('.phone').append('<div class="col-10">'+x.phone+'</div>');
     $('.sex').append('<div class="col-10">'+x.sex+'</div>');
     $('.age').append('<div class="col-10">'+x.age+'</div>');
+    console.log(x)
     for(var i=0;i<CITYLIST.length;i++) {
         for(var j=0;j<DISTRICTLIST.length;j++) {
-            if(CITYLIST[i].Code == x.city && DISTRICTLIST[j].Code == x.district) {
-                $('.address').append('<div class="col-10 text-left">'+DISTRICTLIST[j].District+', '+CITYLIST[i].City+'</div>');
-            } 
+            for(var u=0;u<x.address.length;u++) {
+                if(CITYLIST[i].Code == x.address[u].city && DISTRICTLIST[j].Code == x.address[u].district) {
+                    $('.address').append('<div class="col-10 text-left">'+DISTRICTLIST[j].District+', '+CITYLIST[i].City+'</div>');
+                } 
+            }
         }
     }
     $('.relatives').append('<div class="col-5 text-left">'+x.relatives+'</div>');
